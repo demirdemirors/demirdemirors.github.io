@@ -1,0 +1,298 @@
+/* Font import for Inter (Apple-like) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --accent: #5b7fff;
+  --accent-glow: #7f9cff;
+  --bg-dark: #181a1b;
+  --bg-glass: rgba(24, 26, 27, 0.7);
+  --bg-glass-light: rgba(255,255,255,0.15);
+  --bg-gradient: linear-gradient(135deg, #232526 0%, #202124 100%);
+  --text-main: #f5f6fa;
+  --text-secondary: #bfc9d1;
+  --border-radius: 1.5rem;
+  --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  --blur: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'SF Pro Display', 'Roboto', Arial, sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-main);
+  background-image: var(--bg-gradient);
+  min-height: 100vh;
+}
+header, footer {
+  background: transparent;
+  padding: 1.5rem 0 1rem 0;
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+nav ul li a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s, color 0.2s;
+}
+nav ul li a:hover {
+  background: var(--bg-glass-light);
+  color: var(--accent);
+}
+section {
+  padding: 3.5rem 1.5rem;
+  max-width: 700px;
+  margin: 2.5rem auto 2.5rem auto;
+  border-radius: var(--border-radius);
+  background: var(--bg-glass);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+section:hover {
+  box-shadow: 0 12px 40px 0 var(--accent-glow);
+  background: var(--bg-glass-light);
+}
+h1, h2, h3 {
+  font-weight: 700;
+  margin-top: 0;
+  letter-spacing: 0.01em;
+}
+h1 {
+  font-size: 2.7rem;
+  margin-bottom: 0.5rem;
+}
+h2 {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+}
+h3 {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+p, ul, li {
+  font-size: 1.08rem;
+  color: var(--text-main);
+}
+ul {
+  padding-left: 1.2rem;
+}
+footer {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+footer nav ul {
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+#theme-toggle {
+  background: #232526;
+  border: 2px solid var(--accent);
+  border-radius: 1.5rem;
+  width: 48px;
+  height: 28px;
+  position: relative;
+  margin-left: 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s, border 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+}
+#theme-toggle::before {
+  content: '';
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent-glow);
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  transition: left 0.2s, background 0.2s;
+}
+body.light #theme-toggle {
+  background: #f5f6fa;
+  border: 2px solid #bfc9d1;
+}
+body.light #theme-toggle::before {
+  background: #fff;
+  left: 24px;
+  box-shadow: 0 0 8px #fff;
+}
+#theme-toggle span {
+  position: absolute;
+  right: 8px;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+.scroll-arrow {
+  display: inline-block;
+  font-size: 2.2rem;
+  margin-top: 2rem;
+  text-decoration: none;
+  color: var(--accent);
+  transition: color 0.2s, transform 0.2s;
+}
+.scroll-arrow:hover {
+  color: var(--accent-glow);
+  transform: translateY(6px) scale(1.1);
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  background: rgba(36, 38, 40, 0.5);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(91,127,255,0.08);
+}
+input, textarea {
+  border-radius: 0.7rem;
+  border: 1.5px solid var(--accent);
+  padding: 0.7rem;
+  background: rgba(24,26,27,0.7);
+  color: var(--text-main);
+  font-size: 1.08rem;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+input:focus, textarea:focus {
+  border: 1.5px solid var(--accent-glow);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent-glow);
+}
+button[type="submit"] {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 0.7rem;
+  padding: 0.9rem 1.7rem;
+  cursor: pointer;
+  font-size: 1.08rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(91,127,255,0.12);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+button[type="submit"]:hover {
+  background: var(--accent-glow);
+  box-shadow: 0 4px 16px rgba(91,127,255,0.18);
+}
+.contact-info p {
+  margin: 0.25rem 0;
+  color: var(--text-secondary);
+}
+.contact-info a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.contact-info a:hover {
+  color: var(--accent-glow);
+}
+body.light {
+  background: #f5f6fa;
+  color: #181a1b;
+  background-image: none;
+}
+body.light section {
+  background: rgba(255,255,255,0.7);
+  color: #181a1b;
+  box-shadow: 0 8px 32px 0 rgba(91,127,255,0.08);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+body.light section:hover {
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 12px 40px 0 #bfc9d1;
+}
+body.light header, body.light footer {
+  background: rgba(255,255,255,0.8);
+  color: #181a1b;
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+}
+body.light nav ul li a {
+  color: #181a1b;
+}
+body.light nav ul li a:hover {
+  background: #e6e9f0;
+  color: var(--accent);
+}
+body.light h2 {
+  color: var(--accent);
+}
+body.light h3 {
+  color: #5b7fff;
+}
+body.light p, body.light ul, body.light li {
+  color: #181a1b;
+}
+body.light .contact-info p {
+  color: #232526;
+}
+body.light .contact-info a {
+  color: var(--accent);
+}
+body.light .contact-info a:hover {
+  color: var(--accent-glow);
+}
+body.light form {
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 2px 8px #bfc9d1;
+}
+body.light input, body.light textarea {
+  background: #fff;
+  color: #181a1b;
+  border: 1.5px solid #bfc9d1;
+}
+body.light input:focus, body.light textarea:focus {
+  border: 1.5px solid var(--accent);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+body.light button[type="submit"] {
+  background: var(--accent);
+  color: #fff;
+}
+body.light button[type="submit"]:hover {
+  background: var(--accent-glow);
+}
+@media (max-width: 700px) {
+  section {
+    padding: 2rem 0.5rem;
+    margin: 1.2rem 0.2rem;
+  }
+  nav ul {
+    gap: 1rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+} 
